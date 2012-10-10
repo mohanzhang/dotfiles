@@ -1,7 +1,19 @@
-set nocompatible               " be iMproved
-filetype on
-filetype off                   " required!
+" Credits: Some parts lifted from yadr
 
+let mapleader = " "
+
+set nocompatible
+filetype on
+filetype off
+
+set encoding=utf-8
+set noerrorbells
+set novisualbell
+
+" Fast escape to normal mode
+:imap <C-space> <Esc>
+
+" =============== Vundle ===========================
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -14,33 +26,36 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 
 syntax enable
 set background=dark
 colorscheme solarized
 
-" ================ Turn Off Swap Files ==============
+set number
+set ruler
+syntax on
+
+" ================ History/Backup ===================
+
+set history=700
 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
+
+" Fast saving
+nmap <leader>w :w<cr>
+
+" Use Ctrl-s for saving
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
 
 " ================ Indentation ======================
 
@@ -59,5 +74,57 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
- 
+set linebreak    "Break lines at preset width
+
+" ================ Searching ========================
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" =============== Window management =================
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+" Move between split windows
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-j> <C-w>j
+
+" =============== Buffers ===========================
+set hidden
+
+" =============== Movement ==========================
+" Set 7 lines buffer for scrolling
+set so=7
+
+" Intuitive home and end
+map <S-h> ^
+map <S-l> $
+
+set nostartofline " preserve cursor column position
+
+" ============== Text Editing =======================
+" allow backspacing over everything
+set backspace=indent,eol,start
+
+nmap <C-Up> [e
+nmap <D-k> [e
+nmap <C-Down> ]e
+nmap <D-j> ]e
+vmap <C-Up> [egv
+vmap <D-k> [egv
+vmap <C-Down> ]egv
+vmap <D-j> ]egv
+
+" Quickly add new lines
+noremap <CR> o<ESC>
+noremap <S-CR> O<ESC>
+
+
+" Opens an edit command with the current path
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
