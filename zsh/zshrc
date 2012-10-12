@@ -33,7 +33,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
 export PATH=/Users/mohanzhang/.rvm/gems/ruby-1.9.3-p0/bin:/Users/mohanzhang/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/mohanzhang/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/mohanzhang/.rvm/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin:/usr/X11/bin:/opt/local/lib/postgresql84/bin
+
+PROMPT='%{$fg[yellow]%}λ %{$fg[green]%}${PWD/#$HOME/~} %{$fg[yellow]%}→ $(git_prompt_info)%{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="λ %{$fg[blue]%}git %{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%} → %{$reset_color%}"
 
 source $HOME/.aliases
