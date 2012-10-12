@@ -11,6 +11,7 @@
   new = green bold
 [core]
   editor = vim
+  excludesfile = ~/.gitignore
 [user]
   name = Mohan Zhang
   email = mohanzhang@gmail.com
