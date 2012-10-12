@@ -13,23 +13,48 @@ set novisualbell
 " Fast escape to normal mode
 :imap <C-space> <Esc>
 
+colorscheme desert
+
 " =============== Vundle ===========================
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
 Bundle 'altercation/vim-colors-solarized'
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+endif
+
+Bundle 'Lokaltog/vim-easymotion'
+
+Bundle 'scrooloose/nerdtree'
+if has('gui_running')
+  autocmd vimenter * NERDTree
+endif
+nmap <Leader>n :NERDTreeToggle<CR>
+
+Bundle 'fholgado/minibufexpl.vim'
+let g:miniBufExplShowBufNumbers = 0           " no buffer numbers
+if has('gui_running')
+  let g:miniBufExplorerMoreThanOne = 0          " always show
+  let g:miniBufExplSplitBelow = 1               " right side
+  let g:miniBufExplVSplit = 24                  " show vertical
+endif
+
+Bundle 'tpope/vim-surround'
+
+Bundle 'kien/ctrlp.vim'
+
+Bundle 'ddollar/nerdcommenter'
+
+Bundle 'chrisbra/NrrwRgn'
 
 filetype plugin indent on     " required!
 
 syntax enable
-set background=dark
-colorscheme solarized
 
 set number
 set ruler
@@ -45,12 +70,11 @@ set nowb
 
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
-
-" Fast saving
-nmap <leader>w :w<cr>
+if has('gui_running')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
 
 " Use Ctrl-s for saving
 noremap <C-S> :update<CR>
@@ -95,8 +119,32 @@ nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-j> <C-w>j
 
+" Use Q to intelligently close a window 
+" (if there are multiple windows into the same buffer)
+" or kill the buffer entirely if it's the last window looking into that buffer
+function! CloseWindowOrKillBuffer()
+  let number_of_windows_to_this_buffer = len(filter(range(1, winnr('$')), "winbufnr(v:val) == bufnr('%')"))
+
+  " We should never bdelete a nerd tree
+  if matchstr(expand("%"), 'NERD') == 'NERD'
+    wincmd c
+    return
+  endif
+
+  if number_of_windows_to_this_buffer > 1
+    wincmd c
+  else
+    bdelete
+  endif
+endfunction
+
+nnoremap <silent> Q :call CloseWindowOrKillBuffer()<CR>
+
 " =============== Buffers ===========================
 set hidden
+
+map <up> :bp<CR>
+map <down> :bn<CR>
 
 " =============== Movement ==========================
 " Set 7 lines buffer for scrolling
