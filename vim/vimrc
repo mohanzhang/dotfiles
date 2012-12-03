@@ -54,6 +54,8 @@ Bundle 'chrisbra/NrrwRgn'
 
 Bundle 'rbgrouleff/bclose.vim'
 
+Bundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on     " required!
 
 syntax enable
