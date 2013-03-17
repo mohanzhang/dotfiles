@@ -33,7 +33,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$HOME/Library/Haskell/ghc-7.4.1/lib/cabal-dev-0.9.1/bin:$HOME/.rbenv/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin:/usr/X11/bin:/opt/local/lib/postgresql84/bin
+export PATH=/usr/local/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/usr/X11/bin
+export PATH=$HOME/Library/Haskell/ghc-7.4.1/lib/cabal-install-1.16.0.2/bin:$PATH
+export PATH=$HOME/Library/Haskell/ghc-7.4.1/lib/cabal-dev-0.9.2/bin:$HOME/.rbenv/bin:$PATH:/opt/local/lib/postgresql84/bin
 
 PROMPT='%{$fg[yellow]%}λ %{$fg[green]%}${PWD/#$HOME/~} %{$fg[yellow]%}→ $(git_prompt_info)%{$reset_color%}'
 
