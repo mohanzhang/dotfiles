@@ -45,3 +45,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%} → %{$reset_color%}"
 source $HOME/.aliases
 
 eval "$(rbenv init -)"
+
+export PATH=./bin:$PATH
