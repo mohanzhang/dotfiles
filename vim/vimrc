@@ -59,7 +59,9 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
 
 Bundle 'scrooloose/syntastic'
-let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_ruby_checkers=['mri']
+
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on     " required!
 
