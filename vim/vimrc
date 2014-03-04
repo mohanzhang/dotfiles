@@ -61,7 +61,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers=['mri']
 
-Bundle 'ervandew/supertab'
+Bundle 'thoughtbot/vim-rspec'
+let g:rspec_runner = 'os_x_iterm'
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
 
 filetype plugin indent on     " required!
 
