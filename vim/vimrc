@@ -67,6 +67,10 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
+Bundle 'gcmt/tube.vim'
+let g:tube_terminal = "iterm"
+map <Leader>x :Tube @<CR>
+
 filetype plugin indent on     " required!
 
 syntax enable
