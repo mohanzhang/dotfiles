@@ -55,6 +55,7 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'rbgrouleff/bclose.vim'
 
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mtscout6/vim-cjsx'
 
 Bundle 'mileszs/ack.vim'
 
