@@ -21,22 +21,18 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-endif
+Plugin 'gmarik/vundle'
+Plugin 'altercation/vim-colors-solarized'
 
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 if has('gui_running')
   autocmd vimenter * NERDTree
 endif
 nmap <Leader>n :NERDTreeToggle<CR>
 
-Bundle 'fholgado/minibufexpl.vim'
+Plugin 'fholgado/minibufexpl.vim'
 let g:miniBufExplShowBufNumbers = 0           " no buffer numbers
 if has('gui_running')
   let g:miniBufExplorerMoreThanOne = 0          " always show
@@ -44,35 +40,41 @@ if has('gui_running')
   let g:miniBufExplVSplit = 24                  " show vertical
 endif
 
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
-Bundle 'ddollar/nerdcommenter'
+Plugin 'ddollar/nerdcommenter'
 
-Bundle 'chrisbra/NrrwRgn'
+Plugin 'chrisbra/NrrwRgn'
 
-Bundle 'rbgrouleff/bclose.vim'
+Plugin 'rbgrouleff/bclose.vim'
 
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mtscout6/vim-cjsx'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mtscout6/vim-cjsx'
 
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers=['mri']
 
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'thoughtbot/vim-rspec'
 let g:rspec_runner = 'os_x_iterm'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
-Bundle 'gcmt/tube.vim'
+Plugin 'gcmt/tube.vim'
 let g:tube_terminal = "iterm"
 map <Leader>x :Tube @<CR>
 
+call vundle#end()
 filetype plugin indent on     " required!
+
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+endif
 
 syntax enable
 

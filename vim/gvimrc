@@ -9,3 +9,6 @@ set guioptions-=T
 
 " Sets the font and size
 set guifont=Monaco:h14
+
+" Maximize the window
+set lines=999 columns=9999
