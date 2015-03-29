@@ -12,3 +12,6 @@ set guifont=Monaco:h14
 
 " Maximize the window
 set lines=999 columns=9999
+
+" Longer default line width
+set textwidth=100
