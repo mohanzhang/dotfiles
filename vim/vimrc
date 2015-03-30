@@ -21,7 +21,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'Lokaltog/vim-easymotion'
@@ -52,6 +52,7 @@ Plugin 'rbgrouleff/bclose.vim'
 
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtscout6/vim-cjsx'
+Plugin 'mxw/vim-jsx'
 
 Plugin 'mileszs/ack.vim'
 
