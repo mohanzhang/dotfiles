@@ -52,6 +52,7 @@ Plugin 'rbgrouleff/bclose.vim'
 
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mtscout6/vim-cjsx'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 Plugin 'mileszs/ack.vim'
