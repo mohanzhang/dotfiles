@@ -37,6 +37,7 @@ export PATH=/usr/local/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/us
 export PATH=$HOME/.rbenv/bin:$PATH:/opt/local/lib/postgresql84/bin
 export PATH=$HOME/Library/Haskell/bin:$PATH
 export PATH=./.cabal-sandbox/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH # stack
 
 PROMPT='%{$fg[yellow]%}λ %{$fg[green]%}${PWD/#$HOME/~} %{$fg[yellow]%}→ $(git_prompt_info)%{$reset_color%}'
 
