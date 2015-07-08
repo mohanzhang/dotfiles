@@ -15,3 +15,5 @@
 [user]
   name = Mohan Zhang
   email = mohanzhang@gmail.com
+[push]
+  default = simple
