@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+rm ~/.atom/config.cson && ln -s $DIR/config.cson ~/.atom/config.cson
+rm ~/.atom/keymap.cson && ln -s $DIR/keymap.cson ~/.atom/keymap.cson
+#apm install --packages-file package-list.txt

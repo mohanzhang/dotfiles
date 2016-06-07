@@ -1,0 +1,29 @@
+"*":
+  "bracket-matcher":
+    autocompleteBrackets: false
+  core:
+    disabledPackages: [
+      "jshint"
+    ]
+    projectHome: "/Users/mohanzhang/code"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    invisibles:
+      space: " "
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "bcc1e935-e6b3-5312-dd34-5b3218575879"
+  "ide-purescript": {}
+  welcome:
+    showOnStartup: false
+".psci.purescript.source":
+  editor:
+    preferredLineLength: 100
+".purescript.source":
+  editor:
+    preferredLineLength: 100
