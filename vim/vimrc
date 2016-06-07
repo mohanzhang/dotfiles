@@ -1,5 +1,12 @@
 " Credits: Some parts lifted from yadr
 
+" Reload vimrc on save:
+" http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2403926#2403926
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') && filereadable($MYGVIMRC) | so $MYGVIMRC | endif
+augroup END
+
 let mapleader = " "
 
 set nocompatible
@@ -43,6 +50,9 @@ endif
 Plugin 'tpope/vim-surround'
 
 Plugin 'kien/ctrlp.vim'
+" Consider running :ClearAllCtrlPCaches when changing the ignores
+" Haskell ignores:
+set wildignore+=*.ho,*.hi,*.o,*/dist/*
 
 Plugin 'ddollar/nerdcommenter'
 
@@ -55,7 +65,11 @@ Plugin 'mtscout6/vim-cjsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+"Plugin 'neovimhaskell/haskell-vim'
+Plugin 'pbrisbin/vim-syntax-shakespeare'
+
 Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers=['mri']
