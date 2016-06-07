@@ -12,6 +12,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  ignorecase = false
 [user]
   name = Mohan Zhang
   email = mohanzhang@gmail.com
