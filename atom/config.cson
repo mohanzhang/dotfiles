@@ -2,10 +2,14 @@
   "bracket-matcher":
     autocompleteBrackets: false
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "jshint"
+      "dash"
+      "linter-eslint"
     ]
     projectHome: "/Users/mohanzhang/code"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
@@ -18,12 +22,18 @@
     showInvisibles: true
   "exception-reporting":
     userId: "bcc1e935-e6b3-5312-dd34-5b3218575879"
-  "ide-purescript": {}
+  "ide-haskell":
+    panelPosition: "right"
+  "ide-purescript":
+    autocomplete:
+      addImport: false
+  linter: {}
   welcome:
     showOnStartup: false
 ".psci.purescript.source":
   editor:
     preferredLineLength: 100
+    tabLength: 4
 ".purescript.source":
   editor:
     preferredLineLength: 100
