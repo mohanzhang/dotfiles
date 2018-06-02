@@ -7,6 +7,9 @@
       "jshint"
       "dash"
       "linter-eslint"
+      "haskell-ghc-mod"
+      "ide-haskell"
+      "ide-haskell-cabal"
     ]
     projectHome: "/Users/mohanzhang/code"
     telemetryConsent: "no"
