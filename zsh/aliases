@@ -4,7 +4,10 @@ alias glog='git log --oneline --graph'
 alias gcam='git commit -a -m'
 alias gcaac='git commit -a --amend -CHEAD'
 alias ginitial='git commit --allow-empty -m "Initial empty commit"'
+
 alias be='bundle exec'
 alias se='stack exec'
 alias sb='stack build'
 alias yrp='yarn run pulp build'
+
+alias gyb='python3 gyb.py'
