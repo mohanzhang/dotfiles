@@ -15,6 +15,6 @@
   ignorecase = false
 [user]
   name = Mohan Zhang
-  email = mohanzhang@gmail.com
+  email = mohan@zhang.dev
 [push]
   default = simple
